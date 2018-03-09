@@ -1,0 +1,4 @@
+-Iegūt datubāzi vai izdomāt kā sastādīt pašiem, kur iegūt utt.
+-Izveidot sistēmu filtrēšanai, izdomāt precīzi kādus inputus, logus utml.
+-Izveidot pārskatāmu, saprotamu lietotāja saskarni
+-Mobilo versiju, kā arī kopumā lai normāli izskatās dažādās izšķirtspējas.
