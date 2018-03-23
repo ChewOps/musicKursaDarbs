@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('public'));
-app.get('/index.htm', function (req, res) {
-   res.sendFile( __dirname + "/" + "index.htm" );
+app.engine('html', require('ejs').renderFile);
+app.use(express.static('html'));
+app.get('/songs', function (req, res) {
+   res.render( __dirname + "/html/" + "home.html" );
 })
 
 app.get('/process_get', function (req, res) {
