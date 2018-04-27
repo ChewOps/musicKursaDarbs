@@ -10,8 +10,7 @@ app.get('/songs', function (req, res) {
 app.get('/process_get', function (req, res) {
    // Prepare output in JSON format
    response = {
-      first_name:req.query.first_name,
-      last_name:req.query.last_name
+      song_name:req.query.song_name
    };
    console.log(response);
    res.end(JSON.stringify(response));

@@ -51,10 +51,14 @@
                 </script>
             </div>
 
-            <input type="text" id="search" placeholder="Type to search">
+            
             <p>
                 <strong>Ievadiet izpildītāju, dziesmas nosaukumu vai fragmentu no dziesmas vārdiem.</strong>
             </p>
+			<form action = "http://127.0.0.1:8081/process_get" method = "GET">
+				<input type = "text" name = "song_name">  <br>
+				<input type = "submit" value = "Submit">
+			</form>
 
             <!-- Izveidot ciklu kurš ģenerē tabulu no DB -->
             <script>
