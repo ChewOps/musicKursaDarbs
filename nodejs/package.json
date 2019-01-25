@@ -1,0 +1,30 @@
+{
+  "name": "musickursadarbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.4",
+    "html": "^1.0.0",
+    "mongoose": "^5.4.6",
+    "multer": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewOps/musicKursaDarbs%3Ffbclid%3DIwAR2gVIqGA201hlDGBTl7_n09SNdhZppOiz6Q561tNsDHWBghRGc51552FGo.git"
+  },
+  "author": "Martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewOps/musicKursaDarbs%3Ffbclid%3DIwAR2gVIqGA201hlDGBTl7_n09SNdhZppOiz6Q561tNsDHWBghRGc51552FGo/issues"
+  },
+  "homepage": "https://github.com/ChewOps/musicKursaDarbs%3Ffbclid%3DIwAR2gVIqGA201hlDGBTl7_n09SNdhZppOiz6Q561tNsDHWBghRGc51552FGo#readme"
+}

@@ -1,37 +1,37 @@
+[{
+
+  "title" : "Life on Mars",
+  "artist" : "David Bowie",
+  "genre" : "Rock",
+  "year" : "1993",
+  "lyrics" : "It's a God-awful small affair To the girl with the mousy hair But her mummy is yelling no And her daddy has told her to go  But her friend is nowhere to be seen Now she walks through her sunken dream To the seat with the clearest view And she's hooked to the silver screen  But the film is a saddening bore For she's lived it ten times or more She could spit in the eyes of fools As they ask her to focus on  Sailors fighting in the dance hall Oh man look at those cavemen go It's the freakiest show Take a look at the lawman Beating up the wrong guy Oh man wonder if he'll ever know He's in the best selling show Is there life on Mars?  It's on America's tortured brow That Mickey Mouse has grown up a cow Now the workers have struck for fame 'Cause Lennon's on sale again See the mice in their million hordes From Ibiza to the Norfolk Broads Rule Britannia is out of bounds To my mother, my dog, and clowns But the film is a saddening bore 'Cause I wrote it ten times or more It's about to be writ again As I ask you to focus on  Sailors fighting in the dance hall Oh man look at those cavemen go It's the freakiest show Take a look at the lawman Beating up the wrong guy Oh man wonder if he'll ever know He's in the best selling show Is there life on Mars?"
+ },
+ {
+  "title" : "1981",
+  "artist" : "D Generation",
+  "genre" : "none",
+  "year" : 1996,
+  "lyrics" : "Stuck in the middle of 1981"
+ },
 {
-  "song1" : {
-    "title" : "Life on Mars",
-    "artist" : "David Bowie",
-    "genre" : "Rock",
-    "year" : "1993",
-    "lyrics" : "It's a God-awful small affair \nTo the girl with the mousy hair \nBut her mummy is yelling no \nAnd her daddy has told her to go \n\nBut her friend is nowhere to be seen \nNow she walks through her sunken dream \nTo the seat with the clearest view \nAnd she's hooked to the silver screen \n\nBut the film is a saddening bore \nFor she's lived it ten times or more \nShe could spit in the eyes of fools \nAs they ask her to focus on \n\nSailors fighting in the dance hall \nOh man look at those cavemen go \nIt's the freakiest show \nTake a look at the lawman \nBeating up the wrong guy \nOh man wonder if he'll ever know \nHe's in the best selling show \nIs there life on Mars? \n\nIt's on America's tortured brow \nThat Mickey Mouse has grown up a cow \nNow the workers have struck for fame \n'Cause Lennon's on sale again \nSee the mice in their million hordes \nFrom Ibiza to the Norfolk Broads \nRule Britannia is out of bounds \nTo my mother, my dog, and clowns \nBut the film is a saddening bore \n'Cause I wrote it ten times or more \nIt's about to be writ again \nAs I ask you to focus on \n\nSailors fighting in the dance hall \nOh man look at those cavemen go \nIt's the freakiest show \nTake a look at the lawman \nBeating up the wrong guy \nOh man wonder if he'll ever know \nHe's in the best selling show \nIs there life on Mars?"
-  },
-  "song2" : {
-    "title" : "1981",
-    "artist" : "D Generation",
-    "genre" : "none",
-    "year" : 1996,
-    "lyrics" : "Stuck in the middle of 1981"
-  },
-  "song3" : {
-    "title" : "No No No",
-    "artist" : "Manijama",
-    "genre" : "none",
-    "year" : 2012,
-    "lyrics" : "No no no"
-  },
-  "song4" : {
-    "title" : "Get Up on It Like This",
-    "artist" : "The Chemical Brothers",
-    "genre" : "none",
-    "year" : 1996,
-    "lyrics" : "Yes, yes, so [Repeat x 3]"
-  },
-  "song5" : {
-    "title" : "Bim-Bombey",
-    "artist" : "Jimmie F. Rodgers",
-    "genre" : "none",
-    "year" : 1990,
-    "lyrics" : "Bimbombey, Bimbombey"
-  }
-}
+  "title" : "No No No",
+  "artist" : "Manijama",
+  "genre" : "none",
+  "year" : 2012,
+  "lyrics" : "No no no"
+ },
+ {
+  "title" : "Get Up on It Like This",
+  "artist" : "The Chemical Brothers",
+  "genre" : "none",
+  "year" : 1996,
+  "lyrics" : "Yes, yes, so [Repeat x 3]"
+ },
+ {
+  "title" : "Bim-Bombey",
+  "artist" : "Jimmie F. Rodgers",
+  "genre" : "none",
+  "year" : 1990,
+  "lyrics" : "Bimbombey, Bimbombey"
+ }
+]

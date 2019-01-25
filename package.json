@@ -1,0 +1,19 @@
+{
+  "name": "musickursadarbs",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChewOps/musicKursaDarbs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChewOps/musicKursaDarbs/issues"
+  },
+  "homepage": "https://github.com/ChewOps/musicKursaDarbs#readme"
+}
