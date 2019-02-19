@@ -4,12 +4,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var SongSchema = new Schema({
-
+    _id: Number,
     title: String,
     artist: String,
     year: Number,
     genre: String,
-    lyrics: String,
+    lyrics: String
 
 },{ versionKey: false }); // Gets rid of unnessecary __v value field in db
 

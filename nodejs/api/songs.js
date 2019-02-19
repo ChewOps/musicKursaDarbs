@@ -3,11 +3,11 @@
 var Song = require('../models/song');
 
 module.exports.getAllSongs = function(req, res) {
-    Song.find(function(err, songs) {
+    Song.find(function(err, song) {
         if (err) {
             res.send(err);
         }
-        res.json({songs: songs});
+        res.json({song: song});
     });
 };
 
