@@ -7,14 +7,14 @@ var bodyParser     = require('body-parser');
 
 
 // set our port
-var port = process.env.PORT || 3000;
-var express = require('express');
+var port = process.env.PORT || 4500;
+
 // set up mongoose, assume locally installed
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/musicKursaDarbs', { useNewUrlParser: true });
 
 // set the static files location for our Ember application
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 
 //bodyParser Middleware to allow different encoding requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,16 +29,18 @@ app.use(function(req, res, next) {
 
 
 //Routes API
-var router = express.Router();
-app.use('/', router);
-require('./app/routes')(router); // configure our routes
+//var router = express.Router();
+//app.use('/', router);
+require('./app/routes')(app); // configure our routes
 
 // startup our app at http://localhost:3000
-app.listen(port);
+app.listen(port,function(){
+  console.log("Node server has stated");
+});
 
 
 // expose app
-exports = module.exports = app;
+//exports = module.exports = app;
 
 /*
 There are a few changes from our last post. We've included the bodyParser

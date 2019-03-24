@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var SongSchema = new Schema({
-    _id: Number,
+    _id: String,
     title: String,
     artist: String,
     year: Number,
