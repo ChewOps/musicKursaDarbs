@@ -18,6 +18,8 @@ module.exports = function(router) {
                               .get(function(req,res) { song.getAllSongs(req,res) });
         router.route('*').get(function(req, res) {
                               res.sendfile('./html/home.html'); });
+        router.route('/api/songs/:id')
+                              .get((req, res) => { songs.findById(req, res); })
         router.route('/songs/:song_id')
                                .put(function(req, res) { songs.updateSong(req, res, req.params.song_id) })
                                .delete(function(req, res) { songs.deleteSong(req, res, req.params.song_id) });

@@ -42,7 +42,7 @@ app.get('/api/songs', function(req,res) {
     //    });
     app.get('/api/songs/:id', async (req, res) => {
         try {
-          const song = await Song.findById(req.params.id).lean();
+          const song = await SongModel.findById(req.params.id).lean();
           if (!song) {
             return res.status(404).send({
               message: "Song not found",
@@ -57,13 +57,13 @@ app.get('/api/songs', function(req,res) {
           });
         }
     });
-    //    app.get('/api/songs/:id', function(req, res){
-    //      console.log(req.params.id);
-    //      Song.findById(req,res ,function(err, docs){
-    //        if(err) res.send({error:err});
-    //        else res.send({data:docs, "Song":"song"});
-    //      })
-    //    })
+  //      app.get('/api/songs/:id', function(req, res){
+  //        console.log(req.params.id);
+  //        SongModel.findById(req,res ,function(err, docs){
+  //          if(err) res.send({error:err});
+  //          else res.send({data:docs, "Song":"song"});
+  //        })
+  //      })
     var bodyParser = require('body-parser');
 
     app.use(bodyParser.urlencoded({ extended: false }));
