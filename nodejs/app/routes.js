@@ -1,76 +1,79 @@
 // app/routes.js
-var mongoose = require('mongoose');
-//var Quote = require('../api/quote');
-var Song = require('../api/songs');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const SongsController = require('../api/songs');
 
-
-
-var SongSchema = new mongoose.Schema({
-    title: String,
-    artist: String,
-    year: Number,
-    genre: String,
-    lyrics: String
+const SongSchema = new mongoose.Schema({
+  title: String,
+  artist: String,
+  year: Number,
+  genre: String,
+  lyrics: String
 });
 
-var SongModel = mongoose.model('song',SongSchema);
-//New lines!
+const Song = mongoose.model('song', SongSchema);
 
-module.exports = function(app) {
-app.get('/api/songs', function(req,res) {
-	SongModel.find({},function(err,docs) {
-		if(err) {
-			res.send(err);
-		}
-		else {
-      var resp ={};
-      for(doc in docs) {
-        doc.type = "song";
+module.exports = (app) => {
+
+  app.get('/api/songs', async (req, res) => {
+    try {
+      const songs = await Song.find({}).lean();
+      res.status(200).send({songs});
+    } catch(error) {
+      res.status(500).send({
+        message: error.message
+      });
+    }
+  });
+
+  app.get('/api/songs/:id', async (req, res) => {
+    try {
+      const song = await Song.findById(req.params.id).lean();
+      if(!song) {
+        return res.status(404).send({
+          message: "Song not found",
+          params: req.params
+        });
       }
-      resp.songs=docs;
-			res.send(resp);
-		}
-	});
-});
-
-
-    //    app.get('/api/song', function(req, res){
-    //      Song.find({}, function(err, docs){
-    //      if(err) res.send({error:err});
-    //      else res.send({data:docs, "Song":"song"});
-    //      });
-    //    });
-    app.get('/api/songs/:id', async (req, res) => {
-        try {
-          const song = await SongModel.findById(req.params.id).lean();
-          if (!song) {
-            return res.status(404).send({
-              message: "Song not found",
-              params: req.params
-            });
-          }
-          res.status(200).send(song);
+      res.status(200).send({song});
+    } catch(error) {
+      res.status(500).send({
+        message: error.message
+      });
+    }
+  });
+  app.put('/api/songs/:id', function (req, res) {
+    try {
+      var song = Song.findByIdAndUpdate(req.params);
+      if(!song) {
+        return res.status(404).send({
+          message: "Song not found",
+          params: req.params
+        });
+      }
+      //song = Song.update(song, req.body);
+      res.status(200).send({song});
+    } catch(error) {
+      res.status(500).send({
+        message: error.message
+      });
+    }
+  });
+  app.delete('/api/songs/:id', function(req, res){
+    var id = req.params.id;
+    Song.findByIdAndRemove(id, function(err, song){
+        if(err){
+            throw err;
         }
-        catch (error) {
-          res.status(500).send({
-            message: error.message
-          });
+        else {
+           res.json(song);
         }
     });
-  //      app.get('/api/songs/:id', function(req, res){
-  //        console.log(req.params.id);
-  //        SongModel.findById(req,res ,function(err, docs){
-  //          if(err) res.send({error:err});
-  //          else res.send({data:docs, "Song":"song"});
-  //        })
-  //      })
-    var bodyParser = require('body-parser');
-
-    app.use(bodyParser.urlencoded({ extended: false }));
-
-        app.post('*', function(req, res){
-          Song.addSong(req,res);
-        });
+ });
 
 
+
+  app.use(bodyParser.urlencoded({extended: false}));
+
+  app.post('*', SongsController.addSong);
 };

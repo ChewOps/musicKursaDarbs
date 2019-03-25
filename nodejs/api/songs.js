@@ -11,6 +11,15 @@ module.exports.getAllSongs = function(req, res) {
     });
 };
 
+module.exports.getASong = function(req, res, id) {
+    Song.findById(id, function(err, songs) {
+        if (err) {
+            return res.send(err);
+        }
+        res.json({song: song});
+    });
+};
+
 module.exports.findById = function(req, res) {
   console.log(req.params.id);
     Song.findById(req.params.id ,function(err, data){
@@ -20,7 +29,6 @@ module.exports.findById = function(req, res) {
         song: data
       });
     });
-//  });
 };
 
 module.exports.addSong = function(req,res) {
@@ -33,23 +41,29 @@ module.exports.addSong = function(req,res) {
         res.json({song: song});
     });
 };
+
 module.exports.updateSong = function(req, res, id) {
         Song.findByIdAndUpdate(id, {$set: req.body.song}, function(err, song) {
             if (err) {
-                res.send(err);
+              return  res.send(err);
             };
             res.json({song: song});
         });
 };
 
-module.exports.deleteSong = function(req, res, id) {
-        Song.findByIdAndRemove(id, function(err, song) {
-           if (err) {
-                res.send(err);
-           }
-            res.json({song: song});
-        });
+module.exports.deleteSong = function (id, req, res) {
+     var query = {_id: id};
+    Song.remove(query, song, res);
 };
+//module.exports.deleteSong = function(req, res, id) {
+//        Song.findByIdAndRemove(id, function(err, song) {
+//           if (err) {
+//                res.send(err);
+//           }
+//            res.json({song: song});
+//        });
+//};
+
 module.exports.findByLyrics = function(req, res) {
   console.log(req.params.lyrics);
     Song.find(req.params.lyrics ,function(err, data){
@@ -59,7 +73,6 @@ module.exports.findByLyrics = function(req, res) {
         song: data
       });
     });
-//  });
 };
 
 
