@@ -5,12 +5,12 @@ var song = require('../api/songs');
 module.exports = function(router) {
         router.route('/songs').post(function(req, res) { console.log(req.body); song.addSong(req,res); })
                               .get(function(req,res) { song.getAllSongs(req,res) });
-                              .search(function(req,res) { song.getAllSongs(req,res) });
+                              .get(function(req,res,next) { song.findByLyrics(req,res,next) });
         router.route('*').get(function(req, res) {
                               res.sendfile('./html/home.html'); });
         router.route('/api/songs/:id')
                               .get((req, res) => { songs.findById(req, res); })
-                              .put((req, res) => {songs.update(req, res, id)})
+                              .put((req, res) => {songs.update(req, res)})
                               .delete((req, res) => { songs.deleteSong(req, res); })
 
         router.route('/api/songs/:song_id')

@@ -42,22 +42,40 @@ module.exports = (app) => {
       });
     }
   });
+
+  //app.get('/api/songs', function(req,res) {
+	//   Song.find({},function(err,docs) {
+	//	     if(err) {
+	//		        res.send(err);
+	//	          }
+	//	     else {
+	//		        res.send(docs);
+	//	     }
+	//   });
+  //});
   app.put('/api/songs/:id', function (req, res) {
+    var id = req.params.id;
+    console.log("song update request received   "+id);
+    var song = Song.findByIdAndUpdate(id, req.body.song, function(err, song){
     try {
-      var song = Song.findByIdAndUpdate(req.params);
+      console.log(req.params);
+      console.log(req.body);
       if(!song) {
         return res.status(404).send({
           message: "Song not found",
           params: req.params
         });
       }
+        //console.log("song  received   ");
+        //console.log(song);
       //song = Song.update(song, req.body);
-      res.status(200).send({song});
+      res.json(song);
     } catch(error) {
       res.status(500).send({
         message: error.message
       });
     }
+    });
   });
   app.delete('/api/songs/:id', function(req, res){
     var id = req.params.id;

@@ -36,14 +36,14 @@ module.exports.addSong = function(req,res) {
     song.save(function(err) {
         if (err) {
             res.send(err);
-
         }
         res.json({song: song});
     });
 };
 
-module.exports.updateSong = function(req, res, id) {
-        Song.findByIdAndUpdate(id, {$set: req.body.song}, function(err, song) {
+module.exports.updateSong = function(id, req, res) {
+        var query = {_id: id};
+        Song.findByIdAndUpdate(query, {$set: req.body.song}, function(err, song) {
             if (err) {
               return  res.send(err);
             };
@@ -55,24 +55,19 @@ module.exports.deleteSong = function (id, req, res) {
      var query = {_id: id};
     Song.remove(query, song, res);
 };
-//module.exports.deleteSong = function(req, res, id) {
-//        Song.findByIdAndRemove(id, function(err, song) {
-//           if (err) {
-//                res.send(err);
-//           }
-//            res.json({song: song});
-//        });
-//};
 
-module.exports.findByLyrics = function(req, res) {
-  console.log(req.params.lyrics);
-    Song.find(req.params.lyrics ,function(err, data){
-      if(err){console.log(err);}
-      console.log(data);
-      return res.send({
-        song: data
-      });
-    });
+
+module.exports.findByLyrics = function(req, res, next) {
+  var songRegex = {"$regex": new RegExp('^' + req.params.song.toLowerCase(),  'i')};
+  Song.find({$or:
+    [
+        { title: songRegex },
+        { artist: songRegex },
+        { lyrics: songRegex }
+    ]}, function (err, data) {
+          if (err) throw err;
+          res.send(data);
+  });
 };
 
 
